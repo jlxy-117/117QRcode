@@ -13,10 +13,13 @@ $id = $_GET["id"];//*****************************用户号
 $str = "http://localhost:9092/getUserInfo?user_id=".$id;
 $json = do_get_request($str);
 $list = json_decode($json, true);
+//返回值中多加入信息折扣discount
+//二维码中的数据除了type全部加密
 //判断有没有钱
 if($list['valid']==true){
 	//数据定义区*************************************
-$arr = array('id'=>base64_encode($list['user_id']),'balance'=>base64_encode($list['cash']),'type'=>'self');
+		
+$arr = array('id'=>base64_encode($list['id']),'balance'=>base64_encode($list['cash']),'discount'=>base64_encode($list['discount']),'type'=>$list['type']);
 $content = json_encode($arr);
 
 

@@ -12,7 +12,7 @@ $size = "40";
 $balance = $_GET["bal"];
 $id = $_GET["id"];//*******************************************订单号
 //数据定义区*************************************信息加密过
-$arr = array('id'=>$id,'balance'=>$balance,'type'=>"gift");
+$arr = array('id'=>$id,'balance'=>$balance,'discount'=>base64_encode('1'),'type'=>'gift');
 $content = json_encode($arr);
 
 

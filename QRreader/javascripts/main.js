@@ -34,11 +34,11 @@ $(document).ready(function(){
                         },
                         "text");
 			}
-			if(type == "self"){
+			else{
 				//个人票
 				var id = window.atob(obj.id);
 				var balance = window.atob(obj.balance);
-				$('#read').html("用户:"+id+",余额:"+balance);
+				$('#read').html(type+":"+id+",余额:"+balance);
 				$.post(
                         "http://localhost:9091/metro_in",
                         {

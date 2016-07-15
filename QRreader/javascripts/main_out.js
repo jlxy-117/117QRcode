@@ -8,10 +8,11 @@ $(document).ready(function(){
 			var type = obj.type;
 			var id = window.atob(obj.id);
 			var balance = window.atob(obj.balance);
+			var dis = window.atob(obj.discount);
 			if(type == "gift"){
-				$('#read').html(id);
+				$('#read').html(type);
 			}else{
-				$('#read').html("用户:"+id);
+				$('#read').html(type+":"+id);
 			}
 			$.post(
                     "http://localhost:9091/metro_out",
@@ -19,6 +20,7 @@ $(document).ready(function(){
                         id:id,
 						balance:balance,
 						station:"南京站",
+						discount:dis,
 						type:type
                     },
                     function (data) {
