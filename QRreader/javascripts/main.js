@@ -17,7 +17,7 @@ $(document).ready(function(){
 				$('#read').html("余额:"+balance);
 				//缓存进站消息
 				$.post(
-                        "http://localhost:9091/metro_in",
+                        "http://localhost:9091/metroIn",
                         {
                             id:id,
 							station:"南京南站"
@@ -40,7 +40,7 @@ $(document).ready(function(){
 				var balance = window.atob(obj.balance);
 				$('#read').html(type+":"+id+",余额:"+balance);
 				$.post(
-                        "http://localhost:9091/metro_in",
+                        "http://localhost:9091/metroIn",
                         {
                             id:id,
 							station:"南京南站"

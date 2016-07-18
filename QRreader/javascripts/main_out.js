@@ -15,7 +15,7 @@ $(document).ready(function(){
 				$('#read').html(type+":"+id);
 			}
 			$.post(
-                    "http://localhost:9091/metro_out",
+                    "http://localhost:9091/metroOut",
                     {
                         id:id,
 						balance:balance,
