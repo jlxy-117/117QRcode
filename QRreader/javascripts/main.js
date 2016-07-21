@@ -9,7 +9,7 @@ $(document).ready(function(){
 			var type = obj.type;
 			if(type == "gift"){
 				//gift
-				//进站提交站点、dift订单号
+				//进站提交站点、gift订单号
 				//解密
 				var balance = window.atob(obj.balance);
 				var id = window.atob(obj.id);
@@ -19,8 +19,11 @@ $(document).ready(function(){
 				$.post(
                         "http://localhost:9091/metroIn",
                         {
+                            _method:"post",
                             id:id,
-							station:"南京南站"
+							balance:balance,
+							station:"南京南站",
+							type:"gift"
                         },
                         function (data) {
                             $('#read_res').html(data);
@@ -42,8 +45,11 @@ $(document).ready(function(){
 				$.post(
                         "http://localhost:9091/metroIn",
                         {
+                            _method:"post",
                             id:id,
-							station:"南京南站"
+							balance:balance,
+							station:"南京南站",
+							type:"self"
                         },
                         function (data) {
                             $('#read_res').html(data);
