@@ -54,6 +54,7 @@ imagepng($QR);
 else{
 	$logo = imagecreatefrompng("1.png");
 	imagepng($logo);
+	echo '<script>alert("ÄúµÄÕË»§Óà¶î²»×ã!")</script>';
 }
 
 
